@@ -6,4 +6,25 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
-  
+  db:
+    image: mysql:latest
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    ports:
+      - "3306:3306"
+    volumes:
+      - flora-db:/var/lib/mysql
+      - ./db/init.sql:/docker-entrypoint-initdb.d
+
+volumes:
+  flora-db:
+    name: "flora-db" 
+
+networks:
+  flora-network:
+    name: "flora-network"
+    driver: "bridge"
