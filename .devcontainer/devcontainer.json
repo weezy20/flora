@@ -12,7 +12,7 @@
         "vscode": {
             "extensions": [
                 "svelte.svelte-vscode",
-                "denoland.vscode-deno"
+                "oven-sh.bun"
             ]
         }
     },
