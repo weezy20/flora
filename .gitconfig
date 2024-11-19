@@ -1,0 +1,13 @@
+[user]
+	email = abhishekshah3@gmail.com
+	name = Abhishek Shah
+	signingkey = 2A2B2C560A7BE26ACDD3A6938A6EDA1BFE5D1358
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[commit]
+	gpgSign = false
+[credential]
+	helper = "!f() { /home/dev/.vscode-server/bin/f1a4fb101478ce6ec82fe9627c43efbf9e98c813/node /tmp/vscode-remote-containers-7393c0f6-8331-4d86-896c-4bb05a32c0df.js git-credential-helper $*; }; f"

@@ -1,0 +1,17 @@
+{
+    "name": "flora devcontainer",
+    // Update the 'dockerComposeFile' list if you have more compose files or use different names.
+	// The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
+    "dockerComposeFile": [
+        "../compose.yml",
+        "docker-compose.extend.yml"
+    ],
+    "service": "ui",
+    "workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+    // "mounts": [
+    //     "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    // ],
+    "shutdownAction": "stopCompose",
+    "forwardPorts": [3000],
+    "postAttachCommand": "zsh -c \"source /home/dev/.zshrc\""
+}
