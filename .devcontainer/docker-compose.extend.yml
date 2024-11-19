@@ -5,6 +5,10 @@ services:
       dockerfile: Dockerfile.dev
     volumes:
       - ../:/workspace:cached
+    ports:
+      - 5173:5173
+      - 4173:4173
+      
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
