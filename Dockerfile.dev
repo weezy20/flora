@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y \
     sudo \
     libssl-dev \
     unzip \
-    git
+    git \
+    mysql-client
 # Create the user
 RUN groupadd --gid $USER_GID $USERNAME \
     && useradd --uid $USER_UID --gid $USER_GID -m -s /usr/bin/zsh $USERNAME
