@@ -48,4 +48,4 @@ RUN zsh -c "curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main
     && echo 'eval "$(zoxide init zsh)"' >> /home/$USERNAME/.zshrc
 
 ENV PATH=$PATH:$HOME/.local/bin:$HOME/.bun/bin
-# RUN source in devcontainer
+# RUN source in devcontainer (best-practice)

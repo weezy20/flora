@@ -1,23 +1,27 @@
 {
-    "name": "flora devcontainer",
+    "name": "flora-dev",
     // Update the 'dockerComposeFile' list if you have more compose files or use different names.
     // The .devcontainer/docker-compose.yml file contains any overrides you need/want to make.
     "dockerComposeFile": [
         "../compose.yml",
         "docker-compose.extend.yml"
     ],
-    "service": "ui",
-    "workspaceFolder": "/workspace/${localWorkspaceFolderBasename}",
+    "service": "ui", // Attach to ui service defined in ../compose.yml
+    "workspaceFolder": "/workspace/flora",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "svelte.svelte-vscode",
+                "denoland.vscode-deno"
+            ]
+        }
+    },
     // "mounts": [
-    //     "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    //     "source=${localWorkspaceFolder},target=/workspace/flora,type=bind,consistency=cached"
     // ],
     "shutdownAction": "stopCompose",
     "forwardPorts": [
         4173,
         5173
-    ],
-    "postAttachCommand": [
-        "zsh -c \"source /home/dev/.zshrc\"",
-        "git config --global --add safe.directory /workspace/flora"
     ]
 }

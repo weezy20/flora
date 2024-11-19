@@ -4,15 +4,16 @@ services:
       context: ./
       dockerfile: Dockerfile.dev
     volumes:
-      - ../:/workspace:cached
+      - type: bind
+        source: .
+        target: /workspace/flora
+        consistency: cached
     ports:
-      - 5173:5173
-      - 4173:4173
+      - 5173:5173 # vite dev server
+      - 4173:4173 # vite preview server
       
 
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity
 
-    # Runs app on the same network as the database container, allows "forwardPorts" in devcontainer.json function.
-    # network_mode: service:db # network is already bridge type in compose.yml
 
