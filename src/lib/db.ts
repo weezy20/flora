@@ -1,3 +1,4 @@
+import mysql from 'mysql2/promise';
 export const config = {
     db: {
         host: process.env.DB_HOST || 'localhost',
@@ -11,3 +12,17 @@ export const config = {
     },
     listPerPage: 10,
 };
+
+export const pool = mysql.createPool(config.db);
+
+export async function checkDbStatus(): Promise<boolean> {
+    console.log("Database configuration ", config.db)
+    try {
+        const connection = await pool.getConnection();
+        console.log('Database connection successful');
+    } catch (error) {
+        console.error('Database connection failed:', error);
+        return false;
+    }
+    return true;
+}
