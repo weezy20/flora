@@ -3,11 +3,6 @@ services:
     build: 
       context: ./
       dockerfile: Dockerfile.dev
-    volumes:
-      - type: bind
-        source: .
-        target: /workspace/flora
-        consistency: cached
     ports:
       - 5173:5173 # vite dev server
       - 4173:4173 # vite preview server
