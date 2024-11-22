@@ -5,7 +5,10 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - 4173:4173
+      - 5173:5173
+    networks:
+      - flora-network
   db:
     image: mysql:latest
     container_name: db
@@ -15,10 +18,12 @@ services:
       MYSQL_USER: test
       MYSQL_PASSWORD: test
     ports:
-      - "3306:3306"
+      - 3306:3306
     volumes:
       - flora-db:/var/lib/mysql
       - ./db-init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - flora-network
 
 volumes:
   flora-db:
