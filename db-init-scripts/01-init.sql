@@ -1,3 +1,5 @@
+DROP DATABASE IF EXISTS test;
+
 CREATE DATABASE flora_main;
 
 USE flora_main;
