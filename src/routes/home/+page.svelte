@@ -1,1 +1,2 @@
-<h1>Flora Homepage</h1>
+<h1 class="text-main">Flora Homepage</h1>
+

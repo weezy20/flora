@@ -1,5 +1,5 @@
 import { checkDbStatus } from "$lib";
-import { error } from "@sveltejs/kit";
+// import { error } from "@sveltejs/kit";
 
 export const GET = async () => {
     let { connected, error } = await checkDbStatus();
