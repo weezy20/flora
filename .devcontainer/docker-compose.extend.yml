@@ -3,10 +3,5 @@ services:
     build: 
       context: ./
       dockerfile: Dockerfile.dev
-    ports:
-      - 5173:5173 # vite dev server
-      - 4173:4173 # vite preview server
-      
-
     # Overrides default command so things don't shut down after the process ends.
     command: sleep infinity

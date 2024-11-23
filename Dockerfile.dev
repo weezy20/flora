@@ -8,8 +8,9 @@ ARG USER_GID=$USER_UID
 ARG HOME=/home/$USERNAME
 ARG PROJECT=flora
 
+WORKDIR /workspace/$PROJECT
 RUN apt-get update && apt-get install -y \
-    vim \
+vim \
     zsh \
     curl \
     sudo \
@@ -30,7 +31,6 @@ RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
 
 ## Enter the 'developer' user
 USER $USERNAME
-WORKDIR /workspace/$PROJECT
 RUN curl -fsSL https://bun.sh/install | bash
 
 # Install Oh My Zsh for the 'developer' user
