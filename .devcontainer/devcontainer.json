@@ -19,7 +19,6 @@
     "mounts": [
         "source=${localWorkspaceFolder},target=/workspace/flora,type=bind,consistency=cached"
     ],
-    "remoteUser": "dev",
     "shutdownAction": "stopCompose",
     "forwardPorts": [
         4173,
