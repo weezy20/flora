@@ -1,6 +1,8 @@
 // Loads the blog posts
 import { posts } from '$lib/data';
 
+
+// Load data from blog_summaries table
 export function load() {
     return {
         summaries: posts.map((post: { title: string; slug: string; date: string }) => ({
