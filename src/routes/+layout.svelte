@@ -4,17 +4,19 @@
 	let { children } = $props();
 </script>
 
-<nav class="flex py-4 px-5 justify-between">
-	<div class="flex justify-around">
-		<a class="btn mx-2" href="/home">Home</a>
-		<a class="btn mx-2" href="/about">About</a>
-		<a class="btn mx-2" href="/blog">Blog</a>
-	</div>
-	<NavButton href="/contact" name="Let's work together" />
-</nav>
-<div class="border-b-5 border-black "></div>
+<div class="border-b-2 border-white dark:border-black">
+	<nav class="flex justify-between px-5 py-4">
+		<div class="flex justify-around">
+			<a class="btnx" href="/home">Home</a>
+			<a class="btnx" href="/about">About</a>
+			<a class="btnx" href="/blog">Blog</a>
+		</div>
+		<NavButton href="/contact" name="Let's work together" />
+	</nav>
+</div>
 
 {@render children()}
+
 
 <footer>
 	<br />
@@ -22,4 +24,10 @@
 </footer>
 
 <style>
+	a:hover {
+		color: white;
+	}
+	:global(body.light-mode) a:hover {
+		color: black;
+	}
 </style>

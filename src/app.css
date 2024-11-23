@@ -1,3 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+.btnx {
+	@apply btn;
+	@apply rounded-base mx-2 bg-main px-4 py-2 font-base text-overlay shadow-light transition-transform duration-200 hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none !important;
+}
