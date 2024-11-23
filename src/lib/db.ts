@@ -15,14 +15,13 @@ export const config = {
 
 export const pool = mysql.createPool(config.db);
 
-export async function checkDbStatus(): Promise<boolean> {
-    console.log("Database configuration ", config.db)
+export async function checkDbStatus() {
     try {
         const connection = await pool.getConnection();
-        console.log('Database connection successful');
+        await connection.ping();
+        connection.release();
+        return { connected: true };
     } catch (error) {
-        console.error('Database connection failed:', error);
-        return false;
+        return { connected: false, error };
     }
-    return true;
 }

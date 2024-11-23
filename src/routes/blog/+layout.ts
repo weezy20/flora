@@ -1,5 +1,5 @@
 // Loads the blog posts
-import { posts } from '$lib/data';
+import { posts } from '$lib/mock';
 
 
 // Load data from blog_summaries table

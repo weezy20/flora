@@ -1,4 +1,4 @@
-import { posts } from '$lib/data';
+import { posts } from '$lib/mock';
 import { error } from '@sveltejs/kit'
 
 // Load the blog post from DB 
