@@ -1,1 +1,6 @@
-<h1>[slug]</h1>
+<script>
+	let { data } = $props();
+</script>
+
+<h1>{data.post.title}</h1>
+<p>{@html data.post.content}</p>
