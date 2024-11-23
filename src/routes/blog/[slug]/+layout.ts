@@ -6,3 +6,5 @@ export async function load({ params }: RequestEvent) {
         currentSlug: slug
     };
 }
+
+export const ssr = false
