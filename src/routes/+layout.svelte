@@ -10,3 +10,8 @@
 </nav>
 
 {@render children()}
+
+<footer>
+	<br>
+	<p>### Remember, flowers are always growing somewhere ###</p>
+</footer>
