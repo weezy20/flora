@@ -7,9 +7,9 @@
 <div class="border-b-2 border-white dark:border-black">
 	<nav class="flex justify-between px-5 py-4">
 		<div class="flex justify-around">
-			<a class="btnx" href="/home">Home</a>
-			<a class="btnx" href="/about">About</a>
-			<a class="btnx" href="/blog">Blog</a>
+			<a class="btn btn-outline rounded-full green-600 m-2" href="/home">Home</a>
+			<a class="btn btn-outline rounded-full green-600 m-2" href="/about">About</a>
+			<a class="btn btn-outline rounded-full green-600 m-2" href="/blog">Blog</a>
 		</div>
 		<NavButton href="/contact" name="Let's work together" />
 	</nav>
@@ -17,17 +17,7 @@
 
 {@render children()}
 
-
 <footer>
 	<br />
 	<p>### Remember, flowers are always growing somewhere ###</p>
 </footer>
-
-<style>
-	a:hover {
-		color: white;
-	}
-	:global(body.light-mode) a:hover {
-		color: black;
-	}
-</style>

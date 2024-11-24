@@ -3,6 +3,7 @@
 @import 'tailwindcss/utilities';
 
 .btnx {
-	@apply btn;
-	@apply rounded-base mx-2 bg-main px-4 py-2 font-base text-overlay shadow-light transition-transform duration-200 hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none !important;
+	/* @apply btn; */
+	@apply mx-2 rounded-base bg-main px-4 py-2 font-base text-overlay shadow-dark transition-transform duration-200 hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:shadow-black !important;
+	@apply h-full;
 }
