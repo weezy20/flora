@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Tag from '$lib/components/Tag.svelte';
 
 	interface Project {
 		name: string;
@@ -34,6 +35,15 @@
 	onMount(() => {
 		isVisible = true;
 	});
+	let hoveredLink = '';
+
+	function handleHover(link: string) {
+		hoveredLink = link;
+	}
+
+	function handleLeave() {
+		hoveredLink = '';
+	}
 </script>
 
 <div class="min-h-screen bg-bg p-8 text-text dark:bg-darkBg dark:text-darkText">
@@ -60,30 +70,12 @@
 				deployments.
 			</p>
 			<div class="flex flex-wrap gap-4">
-				<span class="tag flex items-center">
-					<img src="/favicon.png" alt="sveltekit" class="mr-2 inline-block h-full" />
-					Sveltekit
-				</span>
-				<span class="tag">
-					<img src="/go.svg" alt="go" class="mr-2 inline-block h-full" />
-					Go
-				</span>
-				<span class="tag">
-					<img src="/rust-logo-blk.svg" alt="rust " class="mr-2 inline-block h-full" />
-					Rust
-				</span>
-				<span class="tag">
-					<img src="/docker.webp" alt="docker" class="mr-2 inline-block h-full" />
-					Docker</span
-				>
-				<span class="tag">
-					<img src="/k8s.svg" alt="k8s" class="mr-2 inline-block h-full" />
-					Kubernetes
-				</span>
-				<span class="tag">
-					<img src="/linux.png" alt="linux" class="mr-2 inline-block h-full" />
-					Linux
-				</span>
+				<Tag src="/favicon.png" name="Sveltekit" />
+				<Tag src="/go.svg" name="Go" />
+				<Tag src="/rust-logo-blk.svg" name="Rust" />
+				<Tag src="/docker.webp" name="Docker" />
+				<Tag src="/k8s.svg" name="Kubernetes" />
+				<Tag src="/linux.png" name="Linux" />
 			</div>
 		</div>
 
@@ -127,30 +119,54 @@
 			<h3 class="mb-6 text-3xl font-heading">Get in Touch</h3>
 			<div class="flex flex-wrap gap-4">
 				<a
-					href="https://github.com/johndoe"
+					href="https://github.com/weezy20"
 					target="_blank"
 					rel="noopener noreferrer"
+					on:mouseenter={() => handleHover('github')}
+					on:mouseleave={handleLeave}
 					class="btn border-2 border-border bg-main text-white shadow-light transition-transform hover:-translate-x-1
                     hover:-translate-y-1 hover:bg-mainAccent dark:shadow-dark"
 				>
 					GitHub
 				</a>
 				<a
-					href="https://linkedin.com/in/johndoe"
+					href="https://www.linkedin.com/in/abhishek-shah-043b0bb3/"
 					target="_blank"
 					rel="noopener noreferrer"
+					on:mouseenter={() => handleHover('linkedin')}
+					on:mouseleave={handleLeave}
 					class="btn border-2 border-border bg-main text-white shadow-light transition-transform hover:-translate-x-1
                     hover:-translate-y-1 hover:bg-mainAccent dark:shadow-dark"
 				>
 					LinkedIn
 				</a>
 				<a
-					href="mailto:john@doe.com"
+					href="mailto:abhishekshah3@gmail.com"
 					class="btn border-2 border-border bg-main text-white shadow-light transition-transform hover:-translate-x-1
                     hover:-translate-y-1 hover:bg-mainAccent dark:shadow-dark"
+					rel="noopener noreferrer"
+					on:mouseenter={() => handleHover('email')}
+					on:mouseleave={handleLeave}
 				>
 					Email
 				</a>
+				<div class="relative ml-8 h-6 flex-1">
+					<div class="absolute inset-0 flex items-center justify-center">
+						<p
+							class="transform text-lg transition-all duration-300"
+							class:opacity-0={!hoveredLink}
+							class:opacity-100={hoveredLink}
+						>
+							{#if hoveredLink === 'github'}
+								Check out my open-source projects and contributions
+							{:else if hoveredLink === 'linkedin'}
+								Connect with me on LinkedIn and see my work experience
+							{:else if hoveredLink === 'email'}
+								Send me an email at abhishekshah3@gmail.com
+							{/if}
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
