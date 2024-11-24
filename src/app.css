@@ -7,3 +7,12 @@
 	@apply mx-2 rounded-base bg-main px-4 py-2 font-base text-overlay shadow-dark transition-transform duration-200 hover:translate-x-boxShadowX hover:translate-y-boxShadowY hover:shadow-none dark:shadow-black !important;
 	@apply h-full;
 }
+
+
+.tag {
+    @apply badge badge-lg border-border bg-mainAccent text-black py-1;
+}
+.tag:hover {
+    @apply bg-main text-secondaryBlack  ;
+    transition: background-color 200ms, color 200ms;
+}
