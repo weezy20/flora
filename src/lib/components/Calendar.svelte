@@ -40,7 +40,7 @@
         {/each}
         
         {#each daysInMonth as day}
-            <div class="text-center p-2 text-text dark:text-darkText hover:bg-main rounded-base transition-colors {isToday(day) ? 'bg-main text-white' : ''}">
+            <div class="text-center p-2 text-text dark:text-darkText hover:bg-main rounded-base transition-colors {isToday(day) ? 'bg-main text-text dark:text-black' : ''}">
                 {day}
             </div>
         {/each}
