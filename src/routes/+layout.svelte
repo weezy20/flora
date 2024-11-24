@@ -17,7 +17,6 @@
 
 {@render children()}
 
-<footer>
-	<br />
-	<p>### Remember, flowers are always growing somewhere ###</p>
+<footer class="w-full text-center bg-white dark:bg-black py-4 mt-auto">
+	<p> Remember, flowers are always growing somewhere </p>
 </footer>

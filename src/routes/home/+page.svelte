@@ -1,3 +1,11 @@
-<h1 class="text-main">Flora Homepage1</h1>
+<script lang="ts">
+	import Calendar from '$lib/components/Calendar.svelte';
+	import Clock from '$lib/components/Clock.svelte';
+</script>
 
-<div class="btnx">aaaaaaaaaaaaaaa</div>
+<main class="min-h-screen bg-bg p-8 dark:bg-darkBg">
+	<div class="mx-auto max-w-4xl space-y-8">
+		<Clock />
+		<Calendar />
+	</div>
+</main>

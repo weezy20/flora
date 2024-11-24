@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Tag from '$lib/components/Tag.svelte';
+	import { Github, Linkedin, Mail } from 'lucide-svelte';
 
 	interface Project {
 		name: string;
@@ -66,7 +67,7 @@
 				day writing nothing but yaml files.
 			</p>
 			<p class="mb-2 text-lg">
-				I have worked with crypto and databases before and I can also take care of server
+				I have worked with crypto (polkadot) and databases before and I can also take care of server
 				deployments.
 			</p>
 			<div class="flex flex-wrap gap-4">
@@ -92,7 +93,9 @@
 							<p class="py-2">{project.description}</p>
 							<div class="my-2 flex flex-wrap gap-2">
 								{#each project.tech as tech}
-									<span class="badge badge-sm border-border bg-mainAccent text-white">{tech}</span>
+									<span class="badge badge-sm border-border bg-mainAccent p-2 text-white"
+										>{tech}</span
+									>
 								{/each}
 							</div>
 							<div class="card-actions justify-end">
@@ -127,6 +130,7 @@
 					class="btn border-2 border-border bg-main text-white shadow-light transition-transform hover:-translate-x-1
                     hover:-translate-y-1 hover:bg-mainAccent dark:shadow-dark"
 				>
+					<Github class="mr-2 h-5 w-5" />
 					GitHub
 				</a>
 				<a
@@ -138,16 +142,18 @@
 					class="btn border-2 border-border bg-main text-white shadow-light transition-transform hover:-translate-x-1
                     hover:-translate-y-1 hover:bg-mainAccent dark:shadow-dark"
 				>
+					<Linkedin class="mr-2 h-5 w-5" />
 					LinkedIn
 				</a>
 				<a
-					href="mailto:abhishekshah3@gmail.com"
+                    href="mailto:abhishekshah3@gmail.com?subject=Contact%20Abhishek%20Shah"
 					class="btn border-2 border-border bg-main text-white shadow-light transition-transform hover:-translate-x-1
                     hover:-translate-y-1 hover:bg-mainAccent dark:shadow-dark"
 					rel="noopener noreferrer"
 					on:mouseenter={() => handleHover('email')}
 					on:mouseleave={handleLeave}
 				>
+					<Mail class="mr-2 h-5 w-5" />
 					Email
 				</a>
 				<div class="relative ml-8 h-6 flex-1">
