@@ -11,7 +11,7 @@
 			<a class="btn btn-outline rounded-full green-600 m-2" href="/about">About</a>
 			<a class="btn btn-outline rounded-full green-600 m-2" href="/blog">Blog</a>
 		</div>
-		<NavButton href="/contact" name="Let's work together" />
+		<NavButton href="/about" name="Let's work together" />
 	</nav>
 </div>
 
